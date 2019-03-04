@@ -68,6 +68,23 @@ class ControlFlow {
         return false;
     }
 
+    // improvement on top of isSplittableBySum
+    static boolean isSplittableBySum2(int [] items) {
+        int total = 0;
+        for (int item : items) {
+            total += item;
+        }
+
+        int leftTotal = 0;
+        for (int item : items) {
+            total -= item;
+            leftTotal += item;
+            if (leftTotal == total)
+                return true;
+        }
+        return false;
+    }
+
     private static int[] shiftArrayLeft(int[] items, int pos) {
         for (int i = 0; i < pos; i++) {
             int temp = items[0];

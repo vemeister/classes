@@ -45,6 +45,16 @@ public class ControlFlowTest {
     @Test
     public void testIsSplittableBySum() {
         assertTrue(ControlFlow.isSplittableBySum(new int[]{5, 10, 5, 5, 5}));
+        assertFalse(ControlFlow.isSplittableBySum(new int[]{500, 10, 5, 5, 5}));
+    }
+
+    @Test
+    public void testIsSplittableBySum2() {
+        assertTrue(ControlFlow.isSplittableBySum2(new int[]{5, 10, 5, 5, 5}));
+        assertFalse(ControlFlow.isSplittableBySum2(new int[]{500, 10, 5, 5, 5}));
+        assertEquals(
+                ControlFlow.isSplittableBySum2(new int[]{5, 10, 5, 5, 5}),
+                ControlFlow.isSplittableBySum(new int[]{5, 10, 5, 5, 5}));
     }
 
     @Test
